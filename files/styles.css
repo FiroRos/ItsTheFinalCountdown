@@ -1,0 +1,52 @@
+/* Import the custom font */
+@font-face {
+    font-family: 'CountdownFont'; /* Define a name for the font */
+    src: url('octin\ stencil\ rg.otf') format('opentype'); /* Specify the path and format */
+}
+@font-face {
+    font-family: 'TextFont'; /* Define a name for the font */
+    src: url('SecularOne-Regular.ttf') format('truetype'); /* Specify the path and format */
+}
+
+
+/* Apply gradient to the body to cover the whole page */
+body {
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to bottom, #353535, #650808); /* Gradient from top to bottom */
+    font-family: 'CustomFont', sans-serif; /* Apply custom font */
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Styling for the container div */
+.container {
+    text-align: center; /* Center text */
+    color: white; /* Make text color readable */
+}
+
+/* Styling for the countdown */
+.countdown {
+    text-align: center;
+    font-family: 'CountdownFont'; /* Ensure proper font rendering */
+    font-size: 5rem;
+    background: #171717;
+    color: white;
+    padding: 20px;
+    /* border-radius: 10px;  */
+}
+
+.countdown span {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+/* Styling for the heading text */
+.heading {
+    direction: rtl;
+    font-family: 'TextFont';
+    font-size: 3rem; /* Font size for the heading text */
+    margin-bottom: 20px; /* Space between heading and countdown */
+    line-height: 1.5; /* Adjust line height for readability */
+}
