@@ -1,4 +1,4 @@
-/* Import the custom font */
+/* Import the custom fonts */
 @font-face {
     font-family: 'CountdownFont'; /* Define a name for the font */
     src: url('octin stencil rg.otf') format('opentype'); /* Specify the path and format */
@@ -13,17 +13,17 @@ body {
     margin: 0; /* Remove default margin */
     height: 100vh; /* Full viewport height */
     background: linear-gradient(to bottom, #353535, #650808); /* Gradient from top to bottom */
-    font-family: 'TextFont', sans-serif; /* Apply custom font */
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
+    overflow: hidden; /* Prevent overflow */
 }
 
 /* Styling for the container div */
 .container {
     text-align: center; /* Center text */
     color: white; /* Make text color readable */
-    padding: 10px; /* Add some padding */
+    padding: 5%; /* Add some padding and use percentage for responsiveness */
     box-sizing: border-box; /* Ensure padding does not affect width */
 }
 
@@ -31,53 +31,73 @@ body {
 .countdown {
     text-align: center;
     font-family: 'CountdownFont'; /* Ensure proper font rendering */
-    font-size: 5rem;
     background: #171717;
     color: white;
-    padding: 20px;
+    padding: 5%; /* Use percentage for responsiveness */
     border-radius: 10px; /* Rounded corners */
+    box-sizing: border-box; /* Ensure padding does not affect width */
 }
 
 /* Countdown span styling */
 .countdown span {
     display: inline-block;
-    margin: 0 5px; /* Adjust margin for smaller screens */
+    margin: 0 2%; /* Adjust margin for smaller screens */
 }
 
 /* Styling for the heading text */
 .heading {
     direction: rtl;
     font-family: 'TextFont';
-    font-size: 2rem; /* Smaller font size for mobile */
-    margin-bottom: 20px; /* Space between heading and countdown */
-    line-height: 1.5; /* Adjust line height for readability */
+    margin-bottom: 5%; /* Space between heading and countdown */
+    line-height: 1.2; /* Adjust line height for readability */
 }
 
-/* Responsive Design */
+/* Responsive Design for Smartphones */
 @media (max-width: 600px) {
     .countdown {
-        font-size: 3rem; /* Smaller font size for mobile */
-        padding: 15px; /* Adjust padding */
+        font-size: 10vw; /* Further responsive font size */
+        padding: 5%; /* Adjust padding */
     }
 
     .heading {
-        font-size: 1.5rem; /* Smaller font size for mobile */
-        margin-bottom: 15px; /* Adjust margin */
+        font-size: 6vw; /* Further responsive font size */
+        margin-bottom: 5%; /* Adjust margin */
     }
 
     .countdown span {
-        margin: 0 5px; /* Adjust margin for smaller screens */
+        margin: 0 3%; /* Adjust margin for smaller screens */
     }
 }
 
 @media (max-width: 400px) {
     .countdown {
-        font-size: 2rem; /* Further decrease font size for very small screens */
-        padding: 10px; /* Further adjust padding */
+        font-size: 12vw; /* Further responsive font size */
+        padding: 5%; /* Further adjust padding */
     }
 
     .heading {
-        font-size: 1.2rem; /* Further decrease font size */
-        margin-bottom: 10px; /* Further adjust margin */
+        font-size: 8vw; /* Further responsive font size */
+        margin-bottom: 4%; /* Further adjust margin */
+    }
+}
+
+/* Desktop Styles (default) */
+@media (min-width: 601px) {
+    body {
+        font-family: 'TextFont', sans-serif; /* Apply custom font */
+    }
+
+    .countdown {
+        font-size: 5rem; /* Font size for desktop */
+        padding: 20px; /* Padding for desktop */
+    }
+
+    .heading {
+        font-size: 3rem; /* Font size for the heading text */
+        margin-bottom: 20px; /* Space between heading and countdown */
+    }
+
+    .countdown span {
+        margin: 0 10px; /* Margin for desktop */
     }
 }
