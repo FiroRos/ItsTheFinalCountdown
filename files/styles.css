@@ -1,114 +1,106 @@
-/* Import the custom fonts */
 @font-face {
-    font-family: 'CountdownFont'; /* Define a name for the font */
-    src: url('octin stencil rg.otf') format('opentype'); /* Specify the path and format */
+    font-family: 'CountdownFont';
+    src: url('octin stencil rg.otf') format('opentype');
 }
 @font-face {
-    font-family: 'TextFont'; /* Define a name for the font */
-    src: url('SecularOne-Regular.ttf') format('truetype'); /* Specify the path and format */
+    font-family: 'TextFont';
+    src: url('SecularOne-Regular.ttf') format('truetype');
 }
 
-/* Apply gradient to the body to cover the whole page */
 body {
-    margin: 0; /* Remove default margin */
-    height: 100vh; /* Full viewport height */
-    background: linear-gradient(to bottom, #353535, #650808); /* Gradient from top to bottom */
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #353535, #650808);
     display: flex;
-    align-items: center; /* Center vertically */
-    justify-content: center; /* Center horizontally */
-    overflow: hidden; /* Prevent overflow */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
-/* Styling for the container div */
 .container {
-    text-align: center; /* Center text */
-    color: white; /* Make text color readable */
-    padding: 5%; /* Add some padding and use percentage for responsiveness */
-    box-sizing: border-box; /* Ensure padding does not affect width */
+    text-align: center;
+    color: white;
+    padding: 5%;
+    box-sizing: border-box;
 }
 
-/* Styling for the countdown */
 .countdown {
     text-align: center;
-    font-family: 'CountdownFont'; /* Ensure proper font rendering */
+    font-family: 'CountdownFont';
     background: #171717;
     color: white;
-    padding: 5%; /* Use percentage for responsiveness */
-    border-radius: 10px; /* Rounded corners */
-    box-sizing: border-box; /* Ensure padding does not affect width */
+    padding: 5%;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
-/* Countdown span styling */
 .countdown span {
-    display: inline; /* Inline by default for desktop */
-    margin: 0 2%; /* Adjust margin for smaller screens */
+    display: inline;
+    margin: 0 2%;
 }
 
-/* Styling for the heading text */
 .heading {
     direction: rtl;
     font-family: 'TextFont';
-    margin-bottom: 5%; /* Space between heading and countdown */
-    line-height: 1.2; /* Adjust line height for readability */
+    margin-bottom: 5%;
+    line-height: 1.2;
 }
 
-/* Responsive Design for Smartphones */
 @media (max-width: 600px) {
     .countdown {
-        font-size: 10vw; /* Responsive font size */
-        padding: 5%; /* Adjust padding */
+        font-size: 10vw;
+        padding: 5%;
     }
 
     .heading {
-        font-size: 6vw; /* Responsive font size */
-        margin-bottom: 5%; /* Adjust margin */
+        font-size: 6vw;
+        margin-bottom: 5%;
     }
 
     .countdown span {
-        display: block; /* Stack each time unit on a new line */
-        margin: 0; /* Remove margin for stacking */
+        display: block;
+        margin: 0;
     }
 
     .countdown span:before {
-        content: attr(data-label); /* Add label before each span */
-        display: inline; /* Keep label on the same line as number */
-        margin-left: 5px; /* Space between number and label */
+        content: attr(data-label);
+        display: inline;
+        margin-left: 5px;
     }
 }
 
 @media (max-width: 400px) {
     .countdown {
-        font-size: 12vw; /* Further responsive font size */
-        padding: 5%; /* Further adjust padding */
+        font-size: 12vw;
+        padding: 5%;
     }
 
     .heading {
-        font-size: 8vw; /* Further responsive font size */
-        margin-bottom: 4%; /* Further adjust margin */
+        font-size: 8vw;
+        margin-bottom: 4%;
     }
 
     .countdown span:before {
-        font-size: 4vw; /* Adjust label font size for very small screens */
+        font-size: 4vw;
     }
 }
 
-/* Desktop Styles (default) */
 @media (min-width: 601px) {
     body {
-        font-family: 'TextFont', sans-serif; /* Apply custom font */
+        font-family: 'TextFont', sans-serif;
     }
 
     .countdown {
-        font-size: 5rem; /* Font size for desktop */
-        padding: 20px; /* Padding for desktop */
+        font-size: 5rem;
+        padding: 20px;
     }
 
     .heading {
-        font-size: 3rem; /* Font size for the heading text */
-        margin-bottom: 20px; /* Space between heading and countdown */
+        font-size: 3rem;
+        margin-bottom: 20px;
     }
 
     .countdown span {
-        margin: 0 10px; /* Margin for desktop */
+        margin: 0 10px;
     }
 }

@@ -1,4 +1,3 @@
-// Array of names
 const namesData = [
     { firstName: 'דוד', lastName: 'כהן' },
     { firstName: 'יוסף', lastName: 'לוי' },
@@ -52,19 +51,16 @@ const namesData = [
     { firstName: 'טל', lastName: 'שרעבי' }
 ];
 
-// Function to replace placeholders with random names
 function replacePlaceholders() {
     if (namesData.length === 0) return;
 
     const randomIndex = Math.floor(Math.random() * namesData.length);
     const { firstName, lastName } = namesData[randomIndex];
 
-    // Replace placeholders in the HTML
     document.getElementById('family-placeholder').textContent = lastName;
     document.getElementById('name-placeholder').textContent = firstName;
 }
 
-// Function to calculate time remaining
 function calculateTimeRemaining(endTime) {
     const now = new Date().getTime();
     const timeRemaining = endTime - now;
@@ -81,18 +77,15 @@ function calculateTimeRemaining(endTime) {
     return { days, hours, minutes, seconds };
 }
 
-// Function to update countdown and placeholders
 function updateCountdown() {
     const now = new Date().getTime();
     let endTime = localStorage.getItem('countdownEndTime');
 
     if (!endTime || now > endTime) {
-        // Calculate a new end time
         const daysToAdd = Math.floor(Math.random() * 3) + 1;
         const hoursToAdd = Math.floor(Math.random() * 12) + 1;
-        endTime = now + daysToAdd * 24 * 60 * 60 * 1000; // Add days to current time
-        
-        // Randomize the reset time between 1 and 12 hours before the countdown ends
+        endTime = now + daysToAdd * 24 * 60 * 60 * 1000;
+
         const resetOffset = hoursToAdd * 60 * 60 * 1000;
         const randomResetTime = endTime - resetOffset;
         
@@ -102,7 +95,6 @@ function updateCountdown() {
         
         localStorage.setItem('countdownEndTime', endTime);
 
-        // Replace placeholders after the reset
         replacePlaceholders();
     }
 
@@ -114,9 +106,7 @@ function updateCountdown() {
     document.getElementById('seconds').textContent = String(time.seconds).padStart(2, '0');
 }
 
-// Initial setup
-replacePlaceholders(); // Set initial placeholders
-updateCountdown();    // Start the countdown
+replacePlaceholders();
+updateCountdown();
 
-// Update every second
 setInterval(updateCountdown, 1000);
