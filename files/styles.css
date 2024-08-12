@@ -55,12 +55,12 @@ body {
 /* Responsive Design for Smartphones */
 @media (max-width: 600px) {
     .countdown {
-        font-size: 10vw; /* Further responsive font size */
+        font-size: 10vw; /* Responsive font size */
         padding: 5%; /* Adjust padding */
     }
 
     .heading {
-        font-size: 6vw; /* Further responsive font size */
+        font-size: 6vw; /* Responsive font size */
         margin-bottom: 5%; /* Adjust margin */
     }
 
@@ -71,8 +71,8 @@ body {
 
     .countdown span:before {
         content: attr(data-label); /* Add label before each span */
-        display: block; /* Make label block to show on new line */
-        font-size: 3vw; /* Adjust label font size for responsiveness */
+        display: inline; /* Keep label on the same line as number */
+        margin-left: 5px; /* Space between number and label */
     }
 }
 
