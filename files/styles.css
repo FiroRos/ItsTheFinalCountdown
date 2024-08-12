@@ -40,7 +40,7 @@ body {
 
 /* Countdown span styling */
 .countdown span {
-    display: inline-block;
+    display: inline; /* Inline by default for desktop */
     margin: 0 2%; /* Adjust margin for smaller screens */
 }
 
@@ -65,7 +65,14 @@ body {
     }
 
     .countdown span {
-        margin: 0 3%; /* Adjust margin for smaller screens */
+        display: block; /* Stack each time unit on a new line */
+        margin: 0; /* Remove margin for stacking */
+    }
+
+    .countdown span:before {
+        content: attr(data-label); /* Add label before each span */
+        display: block; /* Make label block to show on new line */
+        font-size: 3vw; /* Adjust label font size for responsiveness */
     }
 }
 
@@ -78,6 +85,10 @@ body {
     .heading {
         font-size: 8vw; /* Further responsive font size */
         margin-bottom: 4%; /* Further adjust margin */
+    }
+
+    .countdown span:before {
+        font-size: 4vw; /* Adjust label font size for very small screens */
     }
 }
 
