@@ -1,20 +1,19 @@
 /* Import the custom font */
 @font-face {
     font-family: 'CountdownFont'; /* Define a name for the font */
-    src: url('octin\ stencil\ rg.otf') format('opentype'); /* Specify the path and format */
+    src: url('octin stencil rg.otf') format('opentype'); /* Specify the path and format */
 }
 @font-face {
     font-family: 'TextFont'; /* Define a name for the font */
     src: url('SecularOne-Regular.ttf') format('truetype'); /* Specify the path and format */
 }
 
-
 /* Apply gradient to the body to cover the whole page */
 body {
     margin: 0; /* Remove default margin */
     height: 100vh; /* Full viewport height */
     background: linear-gradient(to bottom, #353535, #650808); /* Gradient from top to bottom */
-    font-family: 'CustomFont', sans-serif; /* Apply custom font */
+    font-family: 'TextFont', sans-serif; /* Apply custom font */
     display: flex;
     align-items: center; /* Center vertically */
     justify-content: center; /* Center horizontally */
@@ -24,6 +23,8 @@ body {
 .container {
     text-align: center; /* Center text */
     color: white; /* Make text color readable */
+    padding: 10px; /* Add some padding */
+    box-sizing: border-box; /* Ensure padding does not affect width */
 }
 
 /* Styling for the countdown */
@@ -34,19 +35,49 @@ body {
     background: #171717;
     color: white;
     padding: 20px;
-    /* border-radius: 10px;  */
+    border-radius: 10px; /* Rounded corners */
 }
 
+/* Countdown span styling */
 .countdown span {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 5px; /* Adjust margin for smaller screens */
 }
 
 /* Styling for the heading text */
 .heading {
     direction: rtl;
     font-family: 'TextFont';
-    font-size: 3rem; /* Font size for the heading text */
+    font-size: 2rem; /* Smaller font size for mobile */
     margin-bottom: 20px; /* Space between heading and countdown */
     line-height: 1.5; /* Adjust line height for readability */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .countdown {
+        font-size: 3rem; /* Smaller font size for mobile */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .heading {
+        font-size: 1.5rem; /* Smaller font size for mobile */
+        margin-bottom: 15px; /* Adjust margin */
+    }
+
+    .countdown span {
+        margin: 0 5px; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .countdown {
+        font-size: 2rem; /* Further decrease font size for very small screens */
+        padding: 10px; /* Further adjust padding */
+    }
+
+    .heading {
+        font-size: 1.2rem; /* Further decrease font size */
+        margin-bottom: 10px; /* Further adjust margin */
+    }
 }
